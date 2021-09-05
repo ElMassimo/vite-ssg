@@ -14,6 +14,10 @@
     "./single-page": {
       "require": "./dist/client/single-page.js",
       "import": "./dist/client/single-page.mjs"
+    },
+    "./build": {
+      "require": "./dist/node/build.js",
+      "import": "./dist/node/build.mjs"
     }
   },
   "license": "MIT",
@@ -45,7 +49,7 @@
   "scripts": {
     "dev": "npm run build:module -- --watch",
     "copy-readme-files": "esno scripts/copy-readme-files.ts",
-    "copy-single-page-dts": "esno scripts/copy-single-page-dts.ts",
+    "copy-exports-dts": "esno scripts/copy-exports-dts.ts",
     "example:dev": "npm run copy-readme-files && npm -C examples/multiple-pages run dev",
     "example:build": "npm run copy-readme-files && npm -C examples/multiple-pages run build",
     "example:serve": "npm run copy-readme-files && npm -C examples/multiple-pages run serve",
@@ -55,8 +59,8 @@
     "example:single:dev": "npm -C examples/single-page run dev",
     "example:single:build": "npm -C examples/single-page run build",
     "example:single:serve": "npm -C examples/single-page run serve",
-    "build:module": "tsup src/index.ts src/client/single-page.ts src/node/cli.ts --dts --format cjs,esm",
-    "build": "rimraf dist && npm run build:module && npm run copy-single-page-dts",
+    "build:module": "tsup src/index.ts src/client/single-page.ts src/node/cli.ts src/node/build.ts --dts --format cjs,esm",
+    "build": "rimraf dist && npm run build:module && npm run copy-exports-dts",
     "prepublishOnly": "npm run build",
     "release": "npx bumpp --push --tag --commit"
   },
