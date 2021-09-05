@@ -1,5 +1,5 @@
 {
-  "name": "vite-ssg",
+  "name": "@mussi/vite-ssg",
   "description": "Server-side generation for Vite",
   "version": "0.14.7",
   "main": "dist/index.js",
@@ -28,10 +28,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/antfu/vite-ssg"
+    "url": "https://github.com/ElMassimo/vite-ssg"
   },
-  "homepage": "https://github.com/antfu/vite-ssg",
-  "bugs": "https://github.com/antfu/vite-ssg/issues",
+  "homepage": "https://github.com/ElMassimo/vite-ssg",
+  "bugs": "https://github.com/ElMassimo/vite-ssg/issues",
   "files": [
     "dist",
     "bin",
